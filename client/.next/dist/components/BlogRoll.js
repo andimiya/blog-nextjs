@@ -56,7 +56,7 @@ var BlogRoll = function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 14
         }
-      }, this.props.title, this.props.slug, this.props.created_by, _react2.default.createElement(_link2.default, { href: '/post?id=' + this.props.id, __source: {
+      }, this.props.title, this.props.slug, this.props.created_by, _react2.default.createElement(_link2.default, { as: '' + this.props.slug, href: '/post?id=' + this.props.id, __source: {
           fileName: _jsxFileName,
           lineNumber: 18
         }
