@@ -1,3 +1,4 @@
+import Layout from '../components/MyLayout.js'
 import BlogRoll from '../components/BlogRoll'
 import fetch from 'isomorphic-fetch'
 
@@ -5,6 +6,7 @@ const Home = (props) => {
 
   return (
     <div>
+      <Layout>
       {props.posts.map((post) => {
         return(
           <BlogRoll
@@ -16,6 +18,7 @@ const Home = (props) => {
           />
         );
       })}
+      </Layout>
     </div>
   )
 }

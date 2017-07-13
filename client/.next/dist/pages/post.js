@@ -4,25 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _regenerator = require('babel-runtime/regenerator');
 
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 var _react = require('react');
 
@@ -41,54 +29,54 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/Andrea/temp/blog-nextjs/client/pages/post.js?entry';
 
 
-var post = function (_React$Component) {
-  (0, _inherits3.default)(post, _React$Component);
-
-  function post() {
-    (0, _classCallCheck3.default)(this, post);
-
-    return (0, _possibleConstructorReturn3.default)(this, (post.__proto__ || (0, _getPrototypeOf2.default)(post)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(post, [{
-    key: 'render',
-
-    // static async getInitialProps() {
-    //   const res = await fetch('http://localhost:8080/api/post')
-    //   // const statusCode = res.statusCode > 200 ? res.statusCode : false
-    //   const json = await res.json()
-    //   return { json }
-    // }
-
-    value: function render() {
-      console.log(this.props, 'props post');
-      if (this.props.statusCode) {
-        return _react2.default.createElement(Error, { statusCode: this.props.statusCode, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          }
-        });
-      }
-      return _react2.default.createElement(_MyLayout2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        }
-      }, _react2.default.createElement('div', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        }
-      }, _react2.default.createElement('p', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        }
-      }, 'Blog Title: ', this.props.title)));
+var Post = function Post(props) {
+  console.log(props, 'props post page');
+  return _react2.default.createElement(_MyLayout2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
     }
-  }]);
+  }, _react2.default.createElement('h1', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }, props.post.title));
+};
 
-  return post;
-}(_react2.default.Component);
+Post.getInitialProps = function () {
+  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(context) {
+    var id, res, post;
+    return _regenerator2.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            id = context.query.id;
 
-exports.default = post;
+            console.log(context.query, 'id post page');
+            _context.next = 4;
+            return (0, _isomorphicFetch2.default)('http://localhost:8080/api/post/' + id);
+
+          case 4:
+            res = _context.sent;
+            _context.next = 7;
+            return res.json();
+
+          case 7:
+            post = _context.sent;
+            return _context.abrupt('return', { post: post });
+
+          case 9:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.default = Post;
