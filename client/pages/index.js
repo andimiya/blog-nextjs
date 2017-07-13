@@ -3,8 +3,6 @@ import fetch from 'isomorphic-fetch'
 
 const Home = (props) => {
 
-  console.log(props, 'props');
-
   return (
     <div>
       {props.posts.map((post) => {
@@ -25,8 +23,6 @@ const Home = (props) => {
 Home.getInitialProps = async function() {
   const res = await fetch('http://localhost:8080/api/post')
   const posts = await res.json()
-
-  console.log(`Show data fetched. Count`)
 
   return {
     posts: posts

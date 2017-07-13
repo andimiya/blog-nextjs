@@ -6,7 +6,7 @@ const Post = (props) => {
   console.log(props, 'props post page');
   return(
   <Layout>
-    <h1>{props.post.title}</h1>
+    <h1>Title</h1>
 
   </Layout>
   )
@@ -17,9 +17,7 @@ Post.getInitialProps = async function (context) {
   const res = await fetch(`http://localhost:8080/api/post/${id}`)
   const post = await res.json()
 
-  console.log(res, 'res')
-
-  return { post }
+  return { post: post }
 }
 
 export default Post;
