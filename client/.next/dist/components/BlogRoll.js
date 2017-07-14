@@ -4,26 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -37,39 +17,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/Andrea/temp/blog-nextjs/client/components/BlogRoll.js';
 
 
-var BlogRoll = function (_React$Component) {
-  (0, _inherits3.default)(BlogRoll, _React$Component);
+var BlogRoll = function BlogRoll(props) {
 
-  function BlogRoll(props) {
-    (0, _classCallCheck3.default)(this, BlogRoll);
+  console.log(props, 'props');
 
-    return (0, _possibleConstructorReturn3.default)(this, (BlogRoll.__proto__ || (0, _getPrototypeOf2.default)(BlogRoll)).call(this, props));
-  }
-
-  (0, _createClass3.default)(BlogRoll, [{
-    key: 'render',
-    value: function render() {
-      console.log(this.props, 'props');
-
-      return _react2.default.createElement('div', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        }
-      }, this.props.title, this.props.slug, this.props.created_by, _react2.default.createElement(_link2.default, { as: '' + this.props.slug, href: '/post?id=' + this.props.id, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        }
-      }, _react2.default.createElement('a', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        }
-      }, this.props.title)));
+  return _react2.default.createElement('div', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
     }
-  }]);
-
-  return BlogRoll;
-}(_react2.default.Component);
+  }, props.title, props.slug, props.created_by, _react2.default.createElement(_link2.default, { as: '/post/' + props.id, href: '/post?id=' + props.id, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, _react2.default.createElement('a', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, props.title)));
+};
 
 exports.default = BlogRoll;

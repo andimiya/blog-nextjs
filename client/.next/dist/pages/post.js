@@ -41,7 +41,12 @@ var Post = function Post(props) {
       fileName: _jsxFileName,
       lineNumber: 9
     }
-  }, props.post.title));
+  }, props.post.title), _react2.default.createElement('p', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }, props.post.title.replace(/<[/]?p>/g, '')));
 };
 
 Post.getInitialProps = function () {

@@ -33,17 +33,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/Andrea/temp/blog-nextjs/client/pages/index.js?entry';
 
 
-var Home = function Home(props) {
-
+var Index = function Index(props) {
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 7
     }
   }, _react2.default.createElement(_MyLayout2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     }
   }, props.posts.map(function (post) {
     return _react2.default.createElement(_BlogRoll2.default, {
@@ -54,13 +53,13 @@ var Home = function Home(props) {
       created_by: post.created_by,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 11
       }
     });
   })));
 };
 
-Home.getInitialProps = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+Index.getInitialProps = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
   var res, posts;
   return _regenerator2.default.wrap(function _callee$(_context) {
     while (1) {
@@ -88,4 +87,4 @@ Home.getInitialProps = (0, _asyncToGenerator3.default)(_regenerator2.default.mar
   }, _callee, this);
 }));
 
-exports.default = Home;
+exports.default = Index;

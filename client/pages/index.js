@@ -2,8 +2,7 @@ import Layout from '../components/MyLayout.js'
 import BlogRoll from '../components/BlogRoll'
 import fetch from 'isomorphic-fetch'
 
-const Home = (props) => {
-
+const Index = (props) => {
   return (
     <div>
       <Layout>
@@ -23,7 +22,7 @@ const Home = (props) => {
   )
 }
 
-Home.getInitialProps = async function() {
+Index.getInitialProps = async function() {
   const res = await fetch('http://localhost:8080/api/post')
   const posts = await res.json()
 
@@ -32,4 +31,4 @@ Home.getInitialProps = async function() {
   }
 }
 
-export default Home;
+export default Index;

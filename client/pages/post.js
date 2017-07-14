@@ -7,7 +7,7 @@ const Post = (props) => {
   return(
   <Layout>
     <h1>{props.post.title}</h1>
-
+    <p>{props.post.title.replace(/<[/]?p>/g, '')}</p>
   </Layout>
   )
 }

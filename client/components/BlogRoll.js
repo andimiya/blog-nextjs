@@ -1,27 +1,19 @@
-import React from 'react'
 import Link from 'next/link'
 
-class BlogRoll extends React.Component {
+const BlogRoll = (props) => {
 
-  constructor(props) {
-    super(props);
-  }
+  console.log(props, 'props');
 
-  render() {
-    console.log(this.props, 'props');
-
-    return (
-      <div>
-        {this.props.title}
-        {this.props.slug}
-        {this.props.created_by}
-        <Link as={`${this.props.slug}`} href={`/post?id=${this.props.id}`}>
-          <a>{this.props.title}</a>
-        </Link>
-      </div>
-    )
-  }
-
+  return (
+    <div>
+      {props.title}
+      {props.slug}
+      {props.created_by}
+      <Link as={`/post/${props.id}`} href={`/post?id=${props.id}`}>
+        <a>{props.title}</a>
+      </Link>
+    </div>
+  )
 }
 
 export default BlogRoll;
