@@ -20,9 +20,9 @@ app.get('/api/post', (req, res) => {
 		});
 });
 
-app.get('/api/post/:id', (req, res) => {
+app.get('/api/post/:slug', (req, res) => {
   new Model.Post({
-    'id': req.params.id
+    'slug': req.params.slug
   })
 		.fetch()
 		.then(post => {

@@ -19,21 +19,19 @@ var _jsxFileName = '/Users/Andrea/temp/blog-nextjs/client/components/BlogRoll.js
 
 var BlogRoll = function BlogRoll(props) {
 
-  console.log(props, 'props');
-
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 6
     }
-  }, props.title, props.slug, props.created_by, _react2.default.createElement(_link2.default, { as: '/post/' + props.id, href: '/post?id=' + props.id, __source: {
+  }, props.title, props.slug, props.created_by, _react2.default.createElement(_link2.default, { as: '/post/' + props.slug, href: '/post?slug=' + props.slug, __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     }
   }, _react2.default.createElement('a', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     }
   }, props.title)));
 };

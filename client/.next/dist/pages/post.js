@@ -30,48 +30,45 @@ var _jsxFileName = '/Users/Andrea/temp/blog-nextjs/client/pages/post.js?entry';
 
 
 var Post = function Post(props) {
-  console.log(props, 'props post page');
   return _react2.default.createElement(_MyLayout2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 7
     }
   }, _react2.default.createElement('h1', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     }
   }, props.post.title), _react2.default.createElement('p', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     }
   }, props.post.title.replace(/<[/]?p>/g, '')));
 };
 
 Post.getInitialProps = function () {
   var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(context) {
-    var id, res, post;
+    var slug, res, post;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            id = context.query.id;
+            slug = context.asPath;
+            _context.next = 3;
+            return (0, _isomorphicFetch2.default)('http://localhost:8080/api' + slug);
 
-            console.log(context.query, 'id post page');
-            _context.next = 4;
-            return (0, _isomorphicFetch2.default)('http://localhost:8080/api/post/' + id);
-
-          case 4:
+          case 3:
             res = _context.sent;
-            _context.next = 7;
+            _context.next = 6;
             return res.json();
 
-          case 7:
+          case 6:
             post = _context.sent;
             return _context.abrupt('return', { post: post });
 
-          case 9:
+          case 8:
           case 'end':
             return _context.stop();
         }
